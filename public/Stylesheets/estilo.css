@@ -3,7 +3,7 @@
 */
 body{
 font-family:verdana;
-background-color:#81F7F3;
+background-image: radial-gradient(circle, #F0F8FF, #1E90FF, #20B2AA 100%);
 width:1000px;
 margin:0 auto;
 } 
@@ -15,6 +15,13 @@ h1 {
   font-family:"Trebuchet MS";
   font-size:30px;
   letter-spacing:20px; 
+}
+
+div {
+  background-image: linear-gradient(#F0F8FF, #1E90FF, #20B2AA 100%);
+  width:100%;
+  height:100%;
+margin:0 auto;
 }
 
 h2 {
