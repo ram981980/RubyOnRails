@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "estilo.css" %>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -15,10 +16,6 @@
   <%= @user.usuario %>
 </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Editar', edit_user_path(@user) %> |
+<%= link_to 'Atras', users_path %>

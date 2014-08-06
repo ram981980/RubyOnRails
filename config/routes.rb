@@ -1,5 +1,5 @@
 Obligatorio::Application.routes.draw do
-  get "welcome/index"
+  get "welcome/index" 
   resources :tweets
 
   resources :users

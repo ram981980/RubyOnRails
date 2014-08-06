@@ -28,7 +28,7 @@ class TweetsController < ApplicationController
 
     respond_to do |format|
       if @tweet.save
-        format.html { redirect_to @tweet, notice: 'Tweet was successfully created.' }
+        format.html { redirect_to @tweet, notice: 'El Tweet ha sido creado con exito.' }
         format.json { render action: 'show', status: :created, location: @tweet }
       else
         format.html { render action: 'new' }
@@ -41,8 +41,8 @@ class TweetsController < ApplicationController
   # PATCH/PUT /tweets/1.json
   def update
     respond_to do |format|
-      if @tweet.update(tweet_params)
-        format.html { redirect_to @tweet, notice: 'Tweet was successfully updated.' }
+      if @tweet.update(tweet_params_edit)
+        format.html { redirect_to @tweet, notice: 'El Tweet ha sido creado con exito.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -70,5 +70,9 @@ class TweetsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tweet_params
       params.require(:tweet).permit(:user_id, :contenido)
+    end
+
+    def tweet_params_edit
+      params.require(:tweet).permit(:contenido)
     end
 end
