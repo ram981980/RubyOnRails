@@ -10,7 +10,7 @@ Obligatorio::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  
+  get "users/buscar" => "users#buscar", as: :buscar_usuario
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
