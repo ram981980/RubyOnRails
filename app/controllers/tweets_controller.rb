@@ -5,7 +5,6 @@ class TweetsController < ApplicationController
   # GET /tweets.json
   def index
     @tweets = Tweet.all
-    @user = User.find_by_id(params[:id])
   end
 
   # GET /tweets/1
@@ -57,7 +56,7 @@ class TweetsController < ApplicationController
   def destroy
     @tweet.destroy
     respond_to do |format|
-      format.html { redirect_to tweets_url }
+      format.html { redirect_to users_url }
       format.json { head :no_content }
     end
   end

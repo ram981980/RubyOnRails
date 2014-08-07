@@ -1,26 +1,32 @@
 <%= stylesheet_link_tag "estilo.css" %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @user.nombre %>
-</p>
+<p><strong>USUARIO: <%= @user.usuario %></strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Numero del Tweet</th>
+      <th>Contenido del Tweet</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <tbody>
+    <% @user.tweets.each do |tweet| %>
+      
+      <tr>
+        <td><%= tweet.id %></td>
+        <td><%= tweet.contenido %></td>
+        <td><%= link_to 'Editar', edit_tweet_path(tweet) %></td>
+        <td><%= link_to '[X]', tweet, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<p>
-  <strong>Usuario:</strong>
-  <%= @user.usuario %>
-</p>
-
-<p>
-  <strong>Tweets:</strong>
-  <%= render partial: "/tweets/tweets" %>
-</p>
-
-
-<%= link_to 'Editar', edit_user_path(@user) %> |
+<%= link_to 'Editar Usuario', edit_user_path(@user) %> |
 <%= link_to 'Atras', users_path %>
+
+
