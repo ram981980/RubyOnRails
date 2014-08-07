@@ -16,11 +16,12 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        
         <td><%= user.nombre %></td>
         <td><%= user.email %></td>
         <td><%= user.usuario %></td>
         <td><%= link_to 'Twittear', new_tweet_path %></td>
-        <td><%= link_to 'Ver Tweets', tweets_path %></td>
+        <td><%= link_to 'Ver Tweets', user_path(user.id) %></td>
         <td><%= link_to '[X]', user, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
       </tr>
     <% end %>
@@ -29,5 +30,4 @@
 
 <br>
 
-<%= link_to 'Nuevo Usuario', new_user_path %>
 <%= link_to 'Pagina Principal', welcome_index_path %>

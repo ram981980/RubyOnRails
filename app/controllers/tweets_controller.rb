@@ -5,6 +5,7 @@ class TweetsController < ApplicationController
   # GET /tweets.json
   def index
     @tweets = Tweet.all
+    @user = User.find_by_id(params[:id])
   end
 
   # GET /tweets/1
@@ -42,7 +43,7 @@ class TweetsController < ApplicationController
   def update
     respond_to do |format|
       if @tweet.update(tweet_params_edit)
-        format.html { redirect_to @tweet, notice: 'El Tweet ha sido creado con exito.' }
+        format.html { redirect_to @tweet, notice: 'El Tweet ha sido modificado con exito.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -74,5 +75,9 @@ class TweetsController < ApplicationController
 
     def tweet_params_edit
       params.require(:tweet).permit(:contenido)
+    end
+
+    def t_params
+      @user = User.find(params[:id])
     end
 end

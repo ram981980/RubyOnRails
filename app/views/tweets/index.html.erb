@@ -4,7 +4,6 @@
 <table>
   <thead>
     <tr>
-      <th>Usuario</th>
       <th>Contenido</th>
       <th></th>
       <th></th>
@@ -13,14 +12,16 @@
   </thead>
 
   <tbody>
-    <% @tweets.each do |tweet| %>
-      
-      <tr>
-        <td><%= @user = User.find(tweet.user_id).usuario %></td>
-        <td><%= tweet.contenido %></td>
-        <td><%= link_to 'Editar', edit_tweet_path(tweet) %></td>
-        <td><%= link_to 'Borrar', tweet, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
-      </tr>
+    <% @tweets.each do |tweet| %>      
+        <tr>
+          <td><%= @user %></td>
+          <td><%= tweet.id %></td>
+          <td><%= tweet.user_id %></td>
+          <td><%= tweet.contenido %></td>
+          <td><%= link_to 'Editar', edit_tweet_path(tweet) %></td>
+          <td><%= link_to 'Borrar', tweet, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+        </tr>
+
     <% end %>
   </tbody>
 </table>
@@ -28,3 +29,5 @@
 <br>
 
 <%= link_to 'Pagina Principal', welcome_index_path %>
+
+ 
