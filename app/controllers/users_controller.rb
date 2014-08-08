@@ -3,6 +3,11 @@ class UsersController < ApplicationController
 
   # GET /users
   # GET /users.json
+
+def buscar
+
+end
+
   def index
     @users = User.all
   end
@@ -22,8 +27,7 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def buscar
-  end
+
 
 
   # POST /users
