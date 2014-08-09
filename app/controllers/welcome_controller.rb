@@ -4,4 +4,9 @@ class WelcomeController < ApplicationController
 
   def buscar
   end
+
+  def listar
+  	@u = params[:usuario]
+  	@users = User.all
+  end
 end

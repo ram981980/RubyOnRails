@@ -1,6 +1,11 @@
 <%= stylesheet_link_tag "estilo.css" %>
 <h1>Buscar Usuario</h1>
 
+<p>Ingresar Usuario</p>
+      
+    <form action = "/welcome/listar" >
+	   <td><input type="text" name="usuario"></td>
+       <td><input type="submit" value="Buscar"></td>
+    </form>
 
-
-<%= link_to 'Atras', users_path %>
+<%= link_to 'Atras', welcome_index_path %>

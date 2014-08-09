@@ -1,0 +1,32 @@
+<%= stylesheet_link_tag "estilo.css" %>
+<h1>Datos del Usuario</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Cantidad de Tweets</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+    <% if user.usuario == @u %>
+	   <td><%= user.usuario %></td>
+	   <td><%= user.nombre %></td>
+	   <td><%= user.email %></td>
+	   <td><%= user.tweets.count %></td>
+	<% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Buscar Usuario', :buscarusuario %>
+<%= link_to 'Pagina Principal', welcome_index_path %>

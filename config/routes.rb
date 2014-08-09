@@ -10,7 +10,9 @@ Obligatorio::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  get 'users/buscar' => 'users#buscar', as: :buscar
+  get 'welcome/buscar' => 'welcome#buscar', as: :buscarusuario
+
+  get 'welcome/listar/:id' => 'welcome#listar', as: :listarusuario
 
   
   # Example of regular route:
